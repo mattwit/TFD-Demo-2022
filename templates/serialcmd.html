@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+
+  <title>OG @ Cisco Live! 2022</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script type="text/javascript" language="JavaScript"></script>
+
+
+</head>
+
+<div class="heading">
+  <div class="header-img"><img src="static/logo_ngcs.png"></div> 
+</div> 
+
+<body>
+
+  <form method="POST" action="">
+
+    <div class="card" style="margin:50px 0">
+
+      <h3>1. Select a device:</h3><br>
+      <img src="static/cisco_live_demo_setup_v2.jpg"><br><br>
+
+        <select name="device">
+          {% for device in serialPorts %}
+            <option value="{{device}}">{{device}}</option>
+          {% endfor %}
+        </select><br>
+
+        <h3>2. Select the <i>privileged exec</i> command you would like to run:</h3>
+
+        
+        <input type="radio" name="selcmd" id="cmd1" value="show ip int brief">
+        <label for="show ip int brief">show ip int brief</label><br>
+
+        <input type="radio" name="selcmd" id="cmd2" value="show ip route">
+        <label for="show ip route">show ip route</label><br>
+
+        <input type="radio" name="selcmd" id="cmd3" value="show lldp neighbor">
+        <label for="show lldp neighbor">show lldp neighbor</label><br>
+
+        <input type="radio" name="selcmd" id="cmd4" value="show run">
+        <label for="show run">show run</label><br>
+
+        <input type="radio" name="selcmd" id="cmd5" value="show version">
+        <label for="show version">show version</label><br>
+
+        <input type="radio" name="selcmd" id="cmd6" value="ping 1.1.1.1">
+        <label for="ping 1.1.1.1">ping 1.1.1.1</label><br><br>
+        
+        <button type="submit" class="block">Go</button>
+        
+
+    </div>
+  </form>
+
+  <a href={{url_for('index')}}>Click here for the Main Menu...</a>
+  
+  
+</body>
+
+</html>

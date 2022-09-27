@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+
+  <title>OG @ Cisco Live! 2022</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script type="text/javascript" language="JavaScript"></script>
+
+
+</head>
+
+<div class="heading">
+  <div class="header-img"><img src="static/logo_ngcs.png"></div> 
+</div> 
+
+
+<body>
+
+  <b>Description:</b><br>
+  <p>Runs a single <i>global configuration</i> (conf t) command on the chosen device.</p><br>
+    
+  <b>Example:</b><br>
+  <p><i>hostname router-1</i></p>
+
+  <form method="POST" action="">
+
+    <div class="card" style="margin:50px 0">
+
+        <h3>1. Select a device:</h3>
+
+        <img src="static/cisco_live_demo_v2.jpg"><br><br>
+
+        <select name="device">
+          {% for device in hosts %}
+            <option value="{{device}}">{{device}}</option>
+          {% endfor %}
+        </select><br><br>
+
+        <h3>2. Enter a <i>global config</i> command:</h3>
+
+        <input type="text" name="textcmd" id="textcmd" size="50"><br><br>
+        
+        <button type="submit" class="block">Go</button>
+
+    </div>
+  </form>
+
+  <a href={{url_for('index')}}>Click here for the Main Menu...</a>
+  
+  
+
+</body>
+
+</html>

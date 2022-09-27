@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+
+  <title>OG @ NFD29</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script type="text/javascript" language="JavaScript"></script>
+
+
+</head>
+
+<div class="heading">
+  <div class="header-img"><img src="static/logo_ngcs.png"></div> 
+</div> 
+
+<body>
+
+  <form method="POST" action="">
+
+    <div class="card" style="margin:50px 0">
+
+        <h3>Select the <i>Junos</i> command you would like to run:</h3>
+
+        <input type="radio" name="selcmd" id="cmd1" value="show interfaces terse">
+        <label for="show interfaces terse">show ip int brief</label><br>
+
+        <input type="radio" name="selcmd" id="cmd2" value="show system software">
+        <label for="show system software">show ip route</label><br>
+
+        <input type="radio" name="selcmd" id="cmd3" value="show chassis hardware">
+        <label for="show chassis hardware">show lldp neighbor</label><br>
+
+        <input type="radio" name="selcmd" id="cmd4" value="show configuration">
+        <label for="show configuration">show run</label><br>
+        
+        <button type="submit" class="block">Go</button>
+        
+
+    </div>
+  </form>
+
+  <a href={{url_for('index')}}>Click here for the Main Menu...</a>
+  
+  
+</body>
+
+</html>

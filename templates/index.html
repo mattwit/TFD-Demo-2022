@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+
+  <title>OG @ Cisco Live! 2022</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script type="text/javascript" language="JavaScript"></script>
+
+
+</head>
+
+<div class="heading">
+  <div class="header-img"><img src="static/logo_ngcs.png"></div> 
+</div> 
+
+<body>
+ 
+  <h2>Tech Field Day Demo</h2>
+
+  <img src="static/cisco_live_demo_setup_v2.jpg">
+
+  <div class="card" style="margin:50px">
+
+  <h3>Main Menu</h3>
+
+  <ol>
+
+  <li><a href={{url_for('selectcmd')}}>Select an IOS Priv Exec Commands (SSH)</a></li><br>
+
+  <li><a href={{url_for('serialcmd')}}>Select an IOS Priv Exec Commands (Serial)</a></li><br>
+
+  <li><a href={{url_for('entercmd')}}>Enter an IOS Priv Exec Command</a></li><br>
+
+  <li><a href={{url_for('iperf')}}>Run iPerf between 2 OM's</li></a><br>
+
+  </ol>
+    
+
+</div>
+
+
+</body>
+
+</html>
